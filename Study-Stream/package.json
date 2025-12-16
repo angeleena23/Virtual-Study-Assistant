@@ -4,12 +4,14 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev:client": "vite dev --port 5000",
-    "dev": "cross-env NODE_ENV=development tsx server/index.ts",
+    {
+  "name": "rest-express",
+  "version": "1.0.0",
+  "main": "server/index.ts",
+  "scripts": {
     "build": "tsx script/build.ts",
-    "start": "NODE_ENV=production node dist/index.cjs",
-    "check": "tsc",
-    "db:push": "drizzle-kit push"
+    "start": "npx cross-env NODE_ENV=production tsx server/index.ts" 
+  },
   },
   "dependencies": {
     "@google/genai": "^1.33.0",
