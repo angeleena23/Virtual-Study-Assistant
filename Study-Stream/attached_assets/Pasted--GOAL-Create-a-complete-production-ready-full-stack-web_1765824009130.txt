@@ -1,0 +1,35 @@
+**GOAL:** Create a complete, production-ready, full-stack web application named 'Virtual Study Assistant.' The core architecture must be structured to use **React** and **Tailwind CSS**.
+
+**AESTHETIC & VISUAL CONSTRAINTS (VIBE):**
+The design must be **Calm, Groovy, and Wellness-Inspired**. Use a monochrome or muted two-tone color palette (like Black and White with light gray and soft accents), featuring **rounded corners**, **generous padding**, and clean, legible typography.
+* **Design Reference:** The overall look, layout, and component style must strictly follow the visual cues and structure provided in the seven attached image files: `homescreen.png`, `study buddy.png`, `mental health check in.png`, `study streak and progress tracker.png`, `ai text summarizer.png`, `calendar and deadline tracker.png`, and `to do list.png`.
+
+**TECHNICAL STACK & CONSTRAINTS:**
+1.  **Backend & Auth:** Scaffold the application to use **Firebase Authentication** for user sign-up/login flows. The entire application structure must be prepared for data persistence using **Cloud Firestore** for all dynamic features (To-Do List, Study Streaks, Calendar Events).
+2.  **AI Integration:** The core AI features must use the **Google Gemini API** for both the Chatbot and Summarizer functionality.
+3.  **Deployment:** Structure the codebase for one-click deployment via **Firebase Hosting**.
+
+**CORE FEATURES & COMPONENT BREAKDOWN (Atomic Components):**
+
+1.  **Authentication Flow:**
+    * Create standard `Sign Up` and `Log In` pages.
+    * Implement an `AuthGuard` or equivalent logic to restrict access to the dashboard until a user is successfully logged in.
+
+2.  **Main Dashboard (Referencing homescreen.png):**
+    * A central, responsive dashboard with a clear navigation sidebar (for mobile, use a hamburger menu).
+    * Prominently display the **Animated Study Buddy (Chatbot)** component as seen in `study buddy.png`.
+
+3.  **AI Chatbot & Summarizer Integration (Referencing study buddy.png and ai text summarizer.png):**
+    * **Chatbot Component:** Build a persistent floating chat interface (Study Buddy) that calls the **Gemini API** for conversational assistance. The interface should have a dedicated input box and scrollable conversation history.
+    * **Summarizer Page:** Create a dedicated page with a large, multi-line input field where users can paste text (up to 5000 characters). A 'Summarize' button triggers a call to the **Gemini API** to return a concise, bulleted summary, displayed in a clear output card.
+
+4.  **Productivity Tools (CRUD Operations):**
+    * **To-Do List (Referencing to do list.png):** A component for managing tasks. Each task is a `Card` component with: a task description, a checkbox for completion, and buttons for Edit/Delete (which interact with **Cloud Firestore**).
+    * **Calendar/Deadline Tracker (Referencing calendar and deadline tracker.png):** A visual calendar view (e.g., a simple month grid) that displays upcoming deadlines fetched from **Cloud Firestore**. Include a modal component for adding new deadlines (title, date, description).
+
+5.  **Gamification & Wellness (State Management):**
+    * **Study Streak & Progress Tracker (Referencing study streak and progress tracker.png):** A prominent card that tracks the user's current 'Study Streak' (e.g., "7 Days") and a visual progress bar (like a circular ring or simple horizontal bar) to display overall progress (e.g., "75% of goal").
+    * **Mental Health Check-in (Referencing mental health check in.png):** A small component that prompts the user to rate their current mood (e.g., a simple 5-emoji scale). This data should be saved to **Cloud Firestore** with a timestamp for tracking over time. The display should include an atomic text element for a motivating quote.
+
+**NEXT ACTION REQUEST:**
+Generate the full application structure, including the initial UI/UX for all pages and components, following the specific style guide provided by the attached images. Do not worry about wiring up all the Firestore logic yet; just create the proper component structure and data-saving functions.
